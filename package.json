@@ -1,16 +1,22 @@
 {
-  "name": "fin-pilot",  
+  "name": "fin-pilot",
   "version": "0.0.1",
   "devDependencies": {
+    "@types/express": "^5.0.5",
     "@types/jest": "^30.0.0",
     "jest": "^30.2.0",
     "ts-jest": "^29.4.5",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.9.3"
   },
   "main": "dist/index.js",
   "scripts": {
+    "start": "ts-node-dev src/api/app.ts",
     "build": "tsc",
     "test": "jest",
     "coverage": "jest --coverage"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
   }
 }
