@@ -44,7 +44,25 @@ Core architecture, calculator logic, and API endpoints are being implemented.
 
 ---
 
-## 🚀 Running the API
+## 🏗️ Project Architecture
+
+The project is organized into two main modules:
+
+```
+fin-pilot/
+├── backend/ ← TypeScript-based API and business logic
+└── web/ ← React + TypeScript frontend application
+```
+
+This structure separates the **API layer** (responsible for financial calculations and data handling) from the **frontend layer** (responsible for user interaction and visualization).  
+
+Although keeping both modules in the same repository is **not an ideal production setup** — since each could be versioned and deployed independently — it was done **intentionally** in this project to make it easier to **run, test, and experiment locally** with both the backend and frontend working together.
+
+## Backend
+
+TypeScript Express API powering financial calculators.
+
+### 🚀 Running the API
 
 Start the API server:
 
@@ -60,7 +78,7 @@ http://localhost:3000
 
 ---
 
-## 🧮 Example Request
+### 🧮 Example Request
 
 **POST /api/compound-interest**
 
@@ -78,7 +96,7 @@ curl -X POST http://localhost:3000/api/compound-interest   -H "Content-Type: app
 
 ---
 
-## 🧪 Testing
+### 🧪 Testing
 
 Run unit tests:
 ```bash
@@ -91,6 +109,10 @@ npm test -- --coverage
 ```
 
 ---
+
+## Web
+
+> TO BE DEVELOPED
 
 ## 🧭 Future Goals
 
