@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "fin-pilot",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
