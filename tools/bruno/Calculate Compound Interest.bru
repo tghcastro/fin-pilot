@@ -1,0 +1,25 @@
+meta {
+  name: Calculate Compound Interest
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3000/api/compound-interest
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "principal": 1000,
+    "annualRate": 0.1,
+    "monthlyDeposit": "1000",
+    "periods": 1
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

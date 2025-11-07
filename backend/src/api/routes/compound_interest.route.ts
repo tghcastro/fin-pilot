@@ -6,9 +6,9 @@ export const compoundInterestRouter = Router();
 
 compoundInterestRouter.post("/", (req, res) => {
   try {
-    const { principal, rate, periods } = req.body;
+    const { principal, annualRate, monthlyDeposit, periods } = req.body;
     const calculator = new CompoundInterestCalculator();
-    const compoundInterestInput = new CompoundInterestInput(principal, rate, periods)
+    const compoundInterestInput = new CompoundInterestInput(principal, annualRate, monthlyDeposit, periods)
     const result = calculator.calculate(compoundInterestInput);
     res.json(result);
   } catch (error: any) {

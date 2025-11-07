@@ -83,7 +83,15 @@ http://localhost:3000
 **POST /api/compound-interest**
 
 ```bash
-curl -X POST http://localhost:3000/api/compound-interest   -H "Content-Type: application/json"   -d '{"principal": 1000, "rate": 0.05, "periods": 12}'
+curl --request POST \
+  --url http://localhost:3000/api/compound-interest \
+  --header 'content-type: application/json' \
+  --data '{
+  "principal": 1000,
+  "annualRate": 0.1,
+  "monthlyDeposit": "1000",
+  "periods": 1
+}'
 ```
 
 **Example Response**
