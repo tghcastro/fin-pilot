@@ -1,10 +1,12 @@
 
 import express from "express";
+import cors from "cors";
 
 import { compoundInterestRouter } from "./routes/compound_interest.route";
 
 const app = express();
 
+app.use(cors())
 app.use(express.json());
 app.use("/api/compound-interest", compoundInterestRouter);
 
