@@ -31,16 +31,19 @@ Core architecture, calculator logic, and API endpoints are being implemented.
    cd fin-pilot
    ```
 
-2. Install dependencies:
+2. Install Backend dependencies:
    ```bash
+   cd backend
    npm install
    ```
 
-3. Install Express and TypeScript types (if not already installed):
+3. Install Backend dependencies:
    ```bash
-   npm install express
-   npm install --save-dev @types/express ts-node-dev
+   cd fin-pilot-web
+   npm install
    ```
+
+
 
 ---
 
@@ -50,6 +53,7 @@ The project is organized into two main modules:
 
 ```
 fin-pilot/
+├── tools/ ← Tools to support this application development and experimentation
 ├── backend/ ← TypeScript-based API and business logic
 └── web/ ← React + TypeScript frontend application
 ```
@@ -120,14 +124,32 @@ npm test -- --coverage
 
 ## Web
 
-> TO BE DEVELOPED
+TypeScript React application which consumes the Backend API
+
+### 🚀 Running the Application
+
+> 💡 **Info:**  
+> Before running the Web Application run Backend service first
+
+
+Start the API server:
+
+```bash
+npm run dev
+```
+
+The server runs at:
+
+```
+http://localhost:5173/
+```
+
+---
 
 ## 🧭 Future Goals
 
 - Implement additional financial calculators (e.g., loan, mortgage, savings)
 - Add validation middleware and error handling
-- Expose calculators through a **REST API**
-- Develop a **web interface** for user interaction
 - Integrate **CI/CD pipelines** with Docker and automated tests
 
 ---
