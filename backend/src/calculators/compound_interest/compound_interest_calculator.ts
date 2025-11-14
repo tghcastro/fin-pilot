@@ -1,5 +1,6 @@
 import { InvalidParameterError } from "../../core/errors/invalid_parameter";
 import calculatorInterface = require("../../core/interfaces/calculator.interface");
+import { calculateMonthlyInterest } from "../../helpers/finance_helper";
 import { LogService } from "../../services/log_service";
 import { CompoundInterestInput } from "./compound_interest_input";
 import { CompoundInterestResult } from "./compound_interest_result";
@@ -12,7 +13,7 @@ export class CompoundInterestCalculator implements calculatorInterface.Calculato
   calculate(input: CompoundInterestInput): CompoundInterestResult {
     const { principal, annualRate, periods , monthlyDeposit } = input;
 
-    const monthlyRate: number = Math.pow(1 + (annualRate), 1 / 12) - 1
+    const monthlyRate: number = calculateMonthlyInterest(annualRate)
     const totalMonths = periods * 12
 
     this.logger.logDebug(`Calculating compound interest [principal:${principal}][monthlyDeposit:${monthlyDeposit}][annualRate:${annualRate}][monthlyRate: ${monthlyRate}][totalYears:${periods}][totalMonths:${totalMonths}]`)
